@@ -7,7 +7,7 @@ export default function SectionMain() {
                 <div className="hero-content text-center">
                     <div className="max-w-md">
                         <h1 className="text-5xl font-bold">Matías Sánchez</h1>
-                        <h2 className="text-3xl font-bold">Full Stack</h2>
+                        <h2 className="text-3xl font-bold text-right">Portfolio</h2>
                         <p className="py-6">
                             
                         </p>

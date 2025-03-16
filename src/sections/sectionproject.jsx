@@ -10,7 +10,7 @@ export default function SectionProject() {
 
     useEffect(() => {
         setLoading(true);
-        fetch(VITE_URL+"/api/proyectos?populate=img", {
+        fetch(VITE_URL+"/api/proyectos?populate=img&sort=fecha:desc", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${VITE_TOKEN}`,
@@ -32,11 +32,11 @@ export default function SectionProject() {
             <div className="bg-base-200 min-h-screen" id="proyectos">
                 <h2 className="text-3xl font-bold text-center">Proyectos</h2>
                 <br />
-                <div className="container mx-auto flex justify-center w-2/3">
+                <div className="container mx-auto flex flex-col justify-center w-2/3  gap-8 ">
                     {
                         loading ? <p>Cargando...</p> :
                             proyectos.data.map((proyecto, index) => {
-                                return <Proyecto key={'proyecto' + index} title={proyecto.titulo} description={proyecto.descripcion} imgs={proyecto.img} />
+                                return <Proyecto key={'proyecto' + index} title={proyecto.titulo} description={proyecto.descripcion} imgs={proyecto.img} link={proyecto.link} />
                             })
                     }
                 </div>

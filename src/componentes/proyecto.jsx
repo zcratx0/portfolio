@@ -1,17 +1,16 @@
 const VITE_URL = import.meta.env.VITE_URL;
 
 
-export default function Proyecto({ title, description, imgs }) {
+export default function Proyecto({ title, description, imgs, link }) {
     return (
         <>
-            <div className="card lg:card-side bg-base-100 shadow-sm">
+            <div className="card lg:card-side bg-base-100 shadow-sm w-full">
                 <div className="card-body w-full lg:w-1/3">
                     <h2 className="card-title">{title}</h2>
                     <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Ver</button>
+                    <div className="card-actions">
+                        <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full">Ver</a>
                     </div>
-
                 </div>
                 <figure className="w-full lg:w-2/3">
                     {
