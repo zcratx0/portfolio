@@ -16,7 +16,7 @@ export default function Proyecto({ title, description, imgs, link }) {
                     {
                         imgs !== undefined &&
                         imgs.map((img, index) => {
-                            return <img key={'img' + index} src={`${VITE_URL}/cms${img.url}`} className="w-96" />
+                            return <img key={'img' + index} src={`${VITE_URL}${img.url}`} className="w-96" />
                         })
                     }
                 </figure>
