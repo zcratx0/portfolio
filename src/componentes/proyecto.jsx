@@ -4,7 +4,7 @@ const VITE_URL = import.meta.env.VITE_URL;
 export default function Proyecto({ title, description, imgs, link }) {
     return (
         <>
-            <div className="card lg:card-side bg-base-100 shadow-sm w-full">
+            <div className="card lg:card-side bg-base-100 shadow-2xl w-full">
                 <div className="card-body w-full lg:w-1/3">
                     <h2 className="card-title">{title}</h2>
                     <p>{description}</p>
