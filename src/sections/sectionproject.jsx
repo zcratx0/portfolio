@@ -10,7 +10,7 @@ export default function SectionProject() {
 
     useEffect(() => {
         setLoading(true);
-        fetch(VITE_URL+"/api/proyectos?populate=img&sort=fecha:desc", {
+        fetch(VITE_URL + "/api/proyectos?populate=img&sort=fecha:desc", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${VITE_TOKEN}`,
