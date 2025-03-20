@@ -15,6 +15,6 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "source ~/.bashrc && eval \"\$(fnm env)\" && cd ${{ secrets.WORK_DIR }} && git pull && npm install && npm run build"
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "source ~/.bashrc && eval \"\$(fnm env)\" && fnm use 22.14.0 && cd ${{ secrets.WORK_DIR }} && git pull && npm install && npm run build"
     - name: cleanup
       run: rm -rf ~/.ssh
