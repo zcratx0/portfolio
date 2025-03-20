@@ -34,7 +34,14 @@ export default function SectionProject() {
                 <br />
                 <div className="container mx-auto flex flex-col justify-center w-2/3  gap-8 ">
                     {
-                        loading ? <p>Cargando...</p> :
+                        loading ?
+                            <div className="flex w-11/12 flex-col gap-4">
+                                <div className="skeleton h-48 w-full"></div>
+                                <div className="skeleton h-4 w-28"></div>
+                                <div className="skeleton h-4 w-full"></div>
+                                <div className="skeleton h-4 w-full"></div>
+                            </div>
+                            :
                             proyectos.data.map((proyecto, index) => {
                                 return <Proyecto key={'proyecto' + index} title={proyecto.titulo} description={proyecto.descripcion} imgs={proyecto.img} link={proyecto.link} />
                             })
